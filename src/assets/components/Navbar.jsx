@@ -8,7 +8,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-blue-600 p-4">
+    <nav className="bg-orange-600 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-xl">VLAN BUSINESS TECHNOLOGIES</div>
         <div className="hidden md:flex space-x-6">
@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-blue-500 p-4 space-y-4">
+        <div className="md:hidden bg-black-500 p-4 space-y-4">
           <Link to="/" className="block text-white hover:text-blue-300">Home</Link>
           <Link to="/services" className="block text-white hover:text-blue-300">Services</Link>
           <Link to="/locations" className="block text-white hover:text-blue-300">Locations</Link>
