@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useCallback, useEffect, useRef } from "react";
 import createGlobe from "cobe";
@@ -31,6 +31,7 @@ const GLOBE_CONFIG = {
     { location: [40.7128, -74.006], size: 0.1 },
     { location: [34.6937, 135.5022], size: 0.05 },
     { location: [41.0082, 28.9784], size: 0.06 },
+    { location: [-1.2864, 36.8172], size: 0.1 },
   ],
 };
 
