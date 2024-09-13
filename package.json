@@ -15,7 +15,6 @@
         "cobe": "^0.6.3",
         "framer-motion": "^11.5.4",
         "lucide-react": "^0.440.0",
-        "magic-ui": "^0.1.0",
         "odbc": "^2.4.9",
         "patch-package": "^8.0.0",
         "postinstall-postinstall": "^2.1.0",
