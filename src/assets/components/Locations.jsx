@@ -3,13 +3,35 @@ import React from 'react';
 const locations = [
   {
     name: 'Vlan Chockaa Campus (Main)',
-    address: '123 Main Street, Chockaa City',
-    phone: '(123) 456-7890',
+    address: 'Midax petrol station, Chockaa ',
+    phone: '0720067010, 0736328241',
+    map: (
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d366.6377610394639!2d36.95247693093899!3d-1.2503405216344856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f14d36220046d%3A0x8e40627b92161f21!2sMidax%20Petrol%20Station!5e0!3m2!1sen!2ske!4v1726207933101!5m2!1sen!2ske"
+        width="450"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    ),
   },
   {
     name: 'Vlan Malaa Campus',
-    address: '456 Branch Road, Malaa Town',
-    phone: '(098) 765-4321',
+    address: 'Along Kamulu Heights Road -200meters from Malaa stage',
+    phone: '0720067010, 0736328241',
+    map: (
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214.24362585309177!2d37.13831797242163!3d-1.2773954490438282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f6758ae4b6c9b%3A0x6c614697106c5473!2sKamulu%20Heights%20Malaa!5e1!3m2!1sen!2ske!4v1726208467254!5m2!1sen!2ske"
+        width="450"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    ),
   },
 ];
 
@@ -24,6 +46,7 @@ const Locations = () => {
               <h3 className="text-xl font-semibold mb-2 text-gray-900">{location.name}</h3>
               <p className="text-gray-700">{location.address}</p>
               <p className="text-gray-700">{location.phone}</p>
+              {location.map && <div className="mt-4">{location.map}</div>}
             </div>
           ))}
         </div>
