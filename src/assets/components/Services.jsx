@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, ShoppingCart, Laptop } from 'lucide-react';
+import { BorderBeam } from "/components/magicui/border-beam.jsx";
 
 const services = [
   {
@@ -33,7 +34,8 @@ const Services = () => {
                   <service.icon className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                   <p className="text-gray-700">{service.description}</p>
-                  
+                  <BorderBeam/>
+
                 </div>
               
             </div>
