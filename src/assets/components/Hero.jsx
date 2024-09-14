@@ -34,17 +34,17 @@ const Hero = () => {
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
             <h2 className="mt-[.5rem] text-[1rem] text-white">
               Point of Sale system for{" "}
-              <span className="text-[#5046e6]">Retail & Restaurants</span>
+              <span className="text-[#FFD700]">Retail & Restaurants</span>
             </h2>
           </BoxReveal>
 
-          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+          <BoxReveal boxColor={"#FF4500"} duration={0.5}>
             <div className="mt-[1.5rem] text-white">
               <p>
                 -&gt; Feature-rich POS system built with
-                <span className="font-semibold text-[#5046e6]"> React</span>,
-                <span className="font-semibold text-[#5046e6]"> Typescript</span>,
-                <span className="font-semibold text-[#5046e6]"> Tailwind CSS</span>,
+                <span className="font-semibold text-[#FF4500]"> React</span>,
+                <span className="font-semibold text-[#FF4500]"> Typescript</span>,
+                <span className="font-semibold text-[#FF4500]"> Tailwind CSS</span>,
                 and
                 <span className="font-semibold text-[#5046e6]"> Framer Motion</span>.
                 <br />
