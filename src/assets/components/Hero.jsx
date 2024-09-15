@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';  // Importing the WhatsApp icon
 import background from "./img/background.webp";
 import Globe from "/components/magicui/globe"; 
 import BoxReveal from "/components/magicui/box-reveal";
@@ -77,16 +78,29 @@ const Hero = () => {
             <p className="text-2xl font-semibold text-green-600 mb-4">
               Only <span className="text-red-500">Ksh 50,000</span> — a small investment for big rewards!
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 mb-6">
               This price includes lifetime access, updates, and full support. Boost your business efficiency now!
             </p>
 
-            <button
-              onClick={closeModal}
-              className="bg-blue-600 text-white px-4 py-2 mt-6 rounded-full hover:bg-blue-700 transition duration-300"
-            >
-              Close
-            </button>
+            {/* Button Group */}
+            <div className="flex justify-center space-x-4">
+              <a
+                href="https://wa.me/254701584681"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+              >
+                <FaWhatsapp className="mr-2 text-xl" />
+                WhatsApp Us
+              </a>
+
+              <button
+                onClick={closeModal}
+                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}
