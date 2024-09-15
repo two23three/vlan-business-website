@@ -1,5 +1,5 @@
 import React from 'react';
-import FlipText from "/components/magicui/flip-text"; // Importing FlipText
+import FlipText from "/components/magicui/flip-text"; 
 
 const locations = [
   {
@@ -41,7 +41,6 @@ const Locations = () => {
     <div className="py-16 bg-gray-100">
       <div className="container mx-auto px-4 text-center">
         
-        {/* FlipText Demo */}
         <FlipText
           className="text-4xl font-bold tracking-[-0.1em] text-black dark:text-white md:text-7xl md:leading-[5rem] mb-8"
           word="Our Locations"
