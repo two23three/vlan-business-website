@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Logo and Title Container */}
         <div className="flex items-center space-x-4">
           <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12" />
-          <div className="text-white font-bold text-xl">VLAN BUSINESS TECHNOLOGIES</div>
+          <div className="text-white font-bold text-xl">Vlan Business Technologies</div>
         </div>
 
         {/* Desktop Links */}
