@@ -84,7 +84,7 @@ const Hero = () => {
 
       <div className="relative z-10 bg-black bg-opacity-60 p-8 rounded-lg text-center max-w-2xl mx-auto mb-12">
         <h2 className="text-4xl font-light mb-4 text-white font-serif italic">
-          Welcome
+          Welcome to
         </h2>
         <h1 className="text-5xl font-bold mb-6 text-white font-serif tracking-wide">
           Vlan Business Technologies
