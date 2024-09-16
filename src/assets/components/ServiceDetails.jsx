@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ShieldCheck, ShoppingCart, Laptop } from 'lucide-react';
+import { ShieldCheck, ShoppingCart, Monitor, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import laptop from './img/laptop.webp';
 import repair from './img/repair.webp';
@@ -10,6 +10,10 @@ import cctv from './img/cctc.png';
 import pos from './img/pointofsale.jpeg';
 import dashboard from './img/dasboard.jpg';
 import SMS from './img/SMS.webp';
+import itlab from "./img/itlab.jpeg"
+import bizz from "./img/business.jpeg"
+import grad from "./img/graduation.jpeg"
+import printing from "./img/printing.jpg"
 const services = [
   {
     icon: ShieldCheck,
@@ -46,11 +50,11 @@ const services = [
     images: [
       { src: pos, alt: 'POS system in use', description: 'A restaurant using our intuitive POS system for quick and accurate order processing.' },
       { src: dashboard, alt: 'Inventory management dashboard', description: 'Real-time inventory management dashboard for a supermarket chain.' },
-      { src: SMS, alt: 'School management system', description: 'Teachers using our school management system to track student attendance and grades.' }
+      { src: SMS, alt: 'School management system', description: 'Teachers use our school management system to track student attendance and grades.' }
     ]
   },
   {
-    icon: Laptop,
+    icon: Monitor,
     title: 'Computer Sales & Repair',
     description: 'Sales and repair of computers, printers, laptops, and adaptors.',
     slug: 'computer-sales-repair',
@@ -64,11 +68,36 @@ const services = [
     ],
     images: [
       { src: repair, alt: 'Computer repair technician', description: 'Our skilled technician diagnosing and repairing a laptop.' },
-      { src: laptop, alt: 'Computer sales showroom', description: 'Our showroom displaying the latest computer models and accessories.' },
-      { src: '/api/placeholder/800/600', alt: 'Data recovery process', description: 'Specialized equipment used in our data recovery services.' }
+      { src: laptop, alt: 'Computer sales ', description: 'We have the latest computer models and accessories.' },
+      {
+        src: printing, 
+        alt: 'Printing services process', 
+        description: 'High-quality printing services using advanced printing equipment.'
+      }
+      
     ]
   },
+  {
+    icon: GraduationCap,
+    title: 'College Programs',
+    description: 'Comprehensive IT and business courses for career advancement.',
+    slug: 'college-programs',
+    fullDescription: 'Our college programs offer cutting-edge education in IT and business, designed to prepare students for successful careers in the digital age. With a focus on practical skills and industry-relevant knowledge, our courses provide a solid foundation for professional growth and development.',
+    features: [
+      'Hands-on training in the latest technologies',
+      'Industry-experienced instructors',
+      'Flexible learning options (full-time, part-time, online)',
+      'Career counseling and job placement assistance',
+      'Internship opportunities with leading companies'
+    ],
+    images: [
+      { src: itlab, alt: 'IT lab', description: 'State-of-the-art IT lab with the latest equipment.' },
+      { src: bizz, alt: 'Business class', description: 'An engaging business strategy class in progress, led by an industry expert.' },
+      { src: grad, alt: 'Graduation ceremony', description: 'Proud graduates receiving their diplomas at our annual graduation ceremony.' }
+    ]
+  }
 ];
+
 const ServiceDetails = () => {
     const { slug } = useParams();
     const service = services.find(s => s.slug === slug);
