@@ -120,13 +120,7 @@ const Hero = () => {
           <BoxReveal boxColor={"#FF4500"} duration={0.5}>
             <div className="mt-[1.5rem] text-white">
               <p className="text-lg font-sans leading-relaxed">
-                -&gt; Feature-rich POS system built with
-                <span className="font-semibold text-[#FF4500]"> React</span>,
-                <span className="font-semibold text-[#FF4500]"> TypeScript</span>,
-                <span className="font-semibold text-[#FF4500]"> Tailwind CSS</span>,
-                and
-                <span className="font-semibold text-[#FF4500]"> Framer Motion</span>.
-                <br />
+               
                 -&gt; Efficient, customizable, and scalable for any business. <br />
               </p>
             </div>
