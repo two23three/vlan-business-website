@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, ShoppingCart, Laptop } from 'lucide-react';
 import { BorderBeam } from "/components/magicui/border-beam.jsx";
 
@@ -7,27 +8,19 @@ const services = [
     icon: ShieldCheck,
     title: 'Security Systems',
     description: 'CCTV cameras, biometrics, and electric fences for your safety.',
+    slug: 'security-systems'
   },
   {
     icon: ShoppingCart,
     title: 'Management Systems',
-    description: (
-      <>
-        POS, Retail, and School management systems for efficient operations.
-        <ul className="list-disc list-inside mt-2">
-          <li>Restaurants & Clubs</li>
-          <li>Supermarkets</li>
-          <li>Hotels</li>
-          <li>Wines & Spirits</li>
-          <li>Wholesalers</li>
-        </ul>
-      </>
-    ),
+    description: 'POS, Retail, and School management systems for efficient operations.',
+    slug: 'management-systems'
   },
   {
     icon: Laptop,
     title: 'Computer Sales & Repair',
     description: 'Sales and repair of computers, printers, laptops, and adaptors.',
+    slug: 'computer-sales-repair'
   },
 ];
 
@@ -42,7 +35,13 @@ const Services = () => {
               <div className="bg-gray-100 p-6 rounded-lg shadow-md relative z-10">
                 <service.icon className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-700">{service.description}</p>
+                <p className="text-gray-700 mb-4">{service.description}</p>
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
+                >
+                  Explore More
+                </Link>
                 <BorderBeam />
               </div>
             </div>

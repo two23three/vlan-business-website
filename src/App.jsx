@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './assets/components/Navbar';
 import Hero from './assets/components/Hero';
 import Services from './assets/components/Services';
+import ServiceDetails from './assets/components/ServiceDetails';
 import Locations from './assets/components/Locations';
 import Footer from './assets/components/Footer';
-
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetails />} />
             <Route path="/locations" element={<Locations />} />
           </Routes>
         </main>
