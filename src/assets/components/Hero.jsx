@@ -3,67 +3,12 @@ import { FaWhatsapp } from 'react-icons/fa';
 import background from "./img/background.webp";
 import Globe from "/components/magicui/globe"; 
 import BoxReveal from "/components/magicui/box-reveal";
-import { cn } from "/lib/utils"; 
-import Marquee from "/components/magicui/marquee";
-
-const reviews = [ 
-  {
-    name: "Sarah",
-    username: "@sarah_retailpro",
-    body: "VLAN POS transformed our retail operations. The efficiency is unmatched!",
-    img: "https://avatar.vercel.sh/sarah",
-  },
-  {
-    name: "Michael",
-    username: "@mike_restaurantowner",
-    body: "This POS system streamlined our restaurant's workflow. Highly recommended!",
-    img: "https://avatar.vercel.sh/michael",
-  },
-  {
-    name: "Emily",
-    username: "@emily_techexpert",
-    body: "As an IT professional, I'm impressed by VLAN's robust security features.",
-    img: "https://avatar.vercel.sh/emily",
-  },
-  {
-    name: "David",
-    username: "@david_smallbiz",
-    body: "VLAN's IT services have been a game-changer for our small business.",
-    img: "https://avatar.vercel.sh/david",
-  },
-  {
-    name: "Lisa",
-    username: "@lisa_retailmanager",
-    body: "The customization options in VLAN POS are exactly what we needed. Love it!",
-    img: "https://avatar.vercel.sh/lisa",
-  },
-];
-
-const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
-const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
-
-const ReviewCard = ({ img, name, username, body }) => {
-  return (
-    <figure
-      className={cn(
-        "relative h-40 w-36 cursor-pointer overflow-hidden rounded-xl border p-4 m-2",
-        "border-gray-950/[.1] bg-white",
-        "dark:border-gray-50/[.1] dark:bg-white"
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-xs text-gray-800 dark:text-white">{body}</blockquote>
-    </figure>
-  );
-};
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "/components/ui/accordion"
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -73,112 +18,142 @@ const Hero = () => {
 
   return (
     <div 
-      className="relative py-8 md:py-16 bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center justify-center"
+      className="relative py-8 md:py-16 bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center justify-center px-4 md:px-8"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="absolute inset-0 top-1/3 transform -translate-y-1/3 w-full h-auto flex justify-center z-0 opacity-40 pointer-events-none">
-        <Globe className="w-full max-w-[18rem] md:max-w-[28rem]" />
+      <div className="absolute inset-0 bg-black opacity-60"></div>
+      
+      <div className="absolute inset-0 top-1/3 transform -translate-y-1/3 w-full h-auto flex justify-center z-0 opacity-30 pointer-events-none">
+        <Globe className="w-full max-w-[18rem] md:max-w-[36rem] animate-spin-slow" />
       </div>
 
-      <div className="relative z-10 bg-black bg-opacity-60 p-4 md:p-8 rounded-lg text-center max-w-2xl mx-auto mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-4xl font-light mb-2 md:mb-4 text-white font-serif italic">
+      <div className="relative z-10 p-4 md:p-8 rounded-lg text-center w-full max-w-4xl mx-auto">
+        <h2 className="text-2xl md:text-5xl font-light mb-2 md:mb-4 text-white font-serif italic animate-fade-in-up">
           Welcome to
         </h2>
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-white font-serif tracking-wide">
+        <h1 className="text-3xl md:text-7xl font-bold mb-4 md:mb-6 text-white font-serif tracking-wide animate-fade-in-up animation-delay-200">
           Vlan Business Technologies
         </h1>
-        <p className="text-lg md:text-2xl text-gray-200 mb-6 md:mb-8 font-sans leading-relaxed">
+        <p className="text-lg md:text-3xl text-gray-200 mb-6 md:mb-8 font-sans leading-relaxed animate-fade-in-up animation-delay-400">
           Your one-stop solution for IT services and security systems
         </p>
-        <div className="flex justify-center space-x-4">
+        
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8 md:mb-12 animate-fade-in-up animation-delay-600">
           <a
             href="https://wa.me/254720067010"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-green-500 text-white px-3 py-2 md:px-4 md:py-2 rounded-full hover:bg-green-600 transition duration-300 text-sm md:text-base"
+            className="inline-flex items-center justify-center bg-green-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-green-600 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
           >
-            <FaWhatsapp className="mr-2 text-lg md:text-xl" />
+            <FaWhatsapp className="mr-2 text-xl md:text-2xl" />
             WhatsApp Us
           </a>
+          <button
+            onClick={openModal}
+            className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-700 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
+          >
+            Learn More
+          </button>
         </div>
-        <div className="relative h-full w-full items-center justify-center overflow-hidden pt-6 md:pt-8">
-          <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <p className="text-2xl md:text-[3.8rem] font-semibold text-white font-serif tracking-wide">
-              Vlan POS<span className="text-[#5046e6]">.</span>
-            </p>
-          </BoxReveal>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 animate-fade-in-up animation-delay-800">
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <h2 className="mt-2 md:mt-[.5rem] text-base md:text-[1.25rem] text-white font-sans tracking-normal">
-              Point of Sale system for{" "}
-              <span className="text-[#FFD700]">Retail & Restaurants</span>
-            </h2>
+            <div className="text-white p-4 md:p-6 rounded-lg bg-opacity-20 bg-white backdrop-filter backdrop-blur-sm h-full flex flex-col">
+              <h3 className="text-xl md:text-3xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
+                Vpos Point of Sale System
+              </h3>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-white">Our Services</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="text-sm md:text-base font-sans text-left list-disc list-inside space-y-1 md:space-y-2">
+                      <li>Sales and repair of laptops/computers/printers</li>
+                      <li>Installation and maintenance of CCTV camera</li>
+                      <li>Structured cabling for data and voice</li>
+                      <li>Electric Fence/Razor</li>
+                      <li>DSTV</li>
+                      <li>Biometrics</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </BoxReveal>
 
           <BoxReveal boxColor={"#FF4500"} duration={0.5}>
-            <div className="mt-3 md:mt-[1.5rem] text-white">
-              <p className="text-sm md:text-lg font-sans leading-relaxed">
-                -&gt; Efficient, customizable, and scalable for any business. <br />
+            <div className="text-white p-4 md:p-6 rounded-lg bg-opacity-20 bg-white backdrop-filter backdrop-blur-sm h-full flex flex-col">
+              <h3 className="text-xl md:text-3xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
+                Vlan College of Business & Technology
+              </h3>
+              <p className="text-sm md:text-base font-sans mb-3 md:mb-4">
+                Minimum entry grade C- and above in KCSE
               </p>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-white">Diploma Programs</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Information Communication Technology</li>
+                      <li>Software Engineering</li>
+                      <li>Sales and Marketing</li>
+                      <li>Purchasing and Supply Chain Management</li>
+                      <li>Business Administration</li>
+                      <li>Tourism Management</li>
+                      <li>Social Work and Community Development</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-white">Professional Certifications</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      <li>Digital Marketing</li>
+                      <li>A+ Certification</li>
+                      <li>N+ Certification</li>
+                      <li>CISCO (CCNA) Certification</li>
+                      <li>Cyber Security</li>
+                      <li>Hairdressing & Beauty</li>
+                    </ul>
+                    <p className="font-semibold mt-3 mb-1 text-sm">KASNEB (ATD & CPA) New Syllabus</p>
+                    <p className="font-semibold mt-3 mb-1 text-sm">Accounting Packages & Languages</p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </BoxReveal>
         </div>
-
-        <button
-          onClick={openModal}
-          className="bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 mt-6 md:mt-8 rounded-full hover:bg-blue-700 transition duration-300 text-base md:text-lg tracking-wider"
-        >
-          Learn More
-        </button>
-      </div>
-
-      <div className="relative flex h-[200px] md:h-[300px] w-full max-w-2xl flex-row items-center justify-center overflow-hidden rounded-lg border-none bg-transparent md:shadow-none mt-6 md:mt-8"> 
-        <Marquee pauseOnHover vertical className="[--duration:20s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-transparent dark:from-transparent"></div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-transparent dark:from-transparent"></div>
       </div>
 
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 p-4">
-          <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg max-w-md text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-gray-900 font-serif tracking-wide">
+          <div className="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-md md:max-w-2xl text-center">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-gray-900 font-serif tracking-wide">
               Unlock the Power of VLAN POS
             </h2>
-            <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6 font-sans leading-relaxed">
+            <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-8 font-sans leading-relaxed">
               Our feature-packed POS system is perfect for retail and restaurants. It offers seamless integration with your business, ensuring you provide top-tier customer service with ease. 
             </p>
-            <p className="text-xl md:text-2xl font-semibold text-green-600 mb-3 md:mb-4 font-sans">
+            <p className="text-xl md:text-3xl font-semibold text-green-600 mb-4 md:mb-6 font-sans">
               From <span className="text-red-500">Ksh 50,000</span> — a small investment for big rewards!
             </p>
-            <p className="text-xs md:text-sm text-gray-600 mb-4 md:mb-6 font-sans leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 font-sans leading-relaxed">
               Boost your business efficiency now!
             </p>
 
-            {/* Button Group */}
-            <div className="flex flex-col md:flex-row justify-center space-y-3 md:space-y-0 md:space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a
                 href="https://wa.me/254720067010"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300 text-sm md:text-base"
+                className="inline-flex items-center justify-center bg-green-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-green-600 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
               >
-                <FaWhatsapp className="mr-2 text-lg md:text-xl" />
+                <FaWhatsapp className="mr-2 text-xl md:text-2xl" />
                 WhatsApp Us
               </a>
-
               <button
                 onClick={closeModal}
-                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 text-sm md:text-base"
+                className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-700 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
               >
                 Close
               </button>
