@@ -6,6 +6,7 @@ import Services from './assets/components/Services';
 import ServiceDetails from './assets/components/ServiceDetails';
 import Locations from './assets/components/Locations';
 import Footer from './assets/components/Footer';
+import Contact from './assets/components/Contacts';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetails />} />
             <Route path="/locations" element={<Locations />} />
+            <Route path="/contact" element={<Contact />} /> {/* Add this line */}
           </Routes>
         </main>
         <Footer />

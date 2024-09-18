@@ -27,6 +27,7 @@ const Navbar = () => {
           <Link to="/" className="text-white hover:text-blue-300">Home</Link>
           <Link to="/services" className="text-white hover:text-blue-300">Services</Link>
           <Link to="/locations" className="text-white hover:text-blue-300">Locations</Link>
+          <Link to="/contact" className="text-white hover:text-blue-300">Contact</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -43,6 +44,8 @@ const Navbar = () => {
           <Link to="/" className="block text-white hover:text-blue-300">Home</Link>
           <Link to="/services" className="block text-white hover:text-blue-300">Services</Link>
           <Link to="/locations" className="block text-white hover:text-blue-300">Locations</Link>
+          <Link to="/contact" className="text-white hover:text-blue-300">Contact</Link>
+
         </div>
       )}
     </nav>
