@@ -116,3 +116,21 @@ body {
 .animation-delay-800 {
   animation-delay: 0.8s;
 }
+.straight-line-list {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.straight-line-list li {
+  position: relative;
+  list-style: none; /* Remove the default bullets */
+}
+
+.straight-line-list li::before {
+  content: '•'; /* Bullet symbol */
+  position: absolute;
+  left: 0; /* Align the bullet on the left */
+  top: 0;
+  font-size: 1.2rem; /* Adjust size of the bullet */
+  color: white; /* Color of the bullet */
+}
