@@ -10,7 +10,6 @@ import {
   AccordionTrigger,
 } from "/components/ui/accordion";
 
-// CSS to align bullets in a straight vertical line
 const straightLineListStyles = `
 .straight-line-list {
   position: relative;
@@ -19,16 +18,17 @@ const straightLineListStyles = `
 
 .straight-line-list li {
   position: relative;
-  list-style: none; /* Remove the default bullets */
+  list-style: none;
+  margin-left: 0.5rem;
 }
 
 .straight-line-list li::before {
-  content: '•'; /* Bullet symbol */
+  content: '•';
   position: absolute;
-  left: 0; /* Align the bullet on the left */
+  left: -1.5rem;
   top: 0;
-  font-size: 1.2rem; /* Adjust size of the bullet */
-  color: white; /* Color of the bullet */
+  font-size: 1.2rem;
+  color: white;
 }
 `;
 
@@ -59,7 +59,7 @@ const Hero = () => {
             Vlan Business Technologies
           </h1>
           <p className="text-lg md:text-3xl text-gray-200 mb-6 md:mb-8 font-sans leading-relaxed animate-fade-in-up animation-delay-400">
-            Your one-stop solution for IT services and security systems
+            Your one-stop solution for IT solutions and security systems
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8 md:mb-12 animate-fade-in-up animation-delay-600">
@@ -83,7 +83,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 animate-fade-in-up animation-delay-800">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <div className="text-white p-4 md:p-6 rounded-lg bg-opacity-20 bg-white backdrop-filter backdrop-blur-sm h-full flex flex-col">
-                <h3 className="text-xl md:text-3xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
+                <h3 className="text-2xl md:text-4xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
                   Vpos Point of Sale System
                 </h3>
                 <Accordion type="single" collapsible className="w-full">
@@ -92,7 +92,7 @@ const Hero = () => {
                     <AccordionContent>
                       <ul className="straight-line-list text-sm md:text-base font-sans text-left space-y-1 md:space-y-2">
                         <li>Sales and repair of laptops/computers/printers</li>
-                        <li>Installation and maintenance of CCTV camera</li>
+                        <li>Installation and maintenance of CCTV cameras</li>
                         <li>Structured cabling for data and voice</li>
                         <li>Electric Fence/Razor</li>
                         <li>DSTV</li>
@@ -106,10 +106,10 @@ const Hero = () => {
 
             <BoxReveal boxColor={"#FF4500"} duration={0.5}>
               <div className="text-white p-4 md:p-6 rounded-lg bg-opacity-20 bg-white backdrop-filter backdrop-blur-sm h-full flex flex-col">
-                <h3 className="text-xl md:text-3xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
+                <h3 className="text-2xl md:text-4xl font-semibold font-serif tracking-wide mb-3 md:mb-4">
                   Vlan College of Business & Technology
                 </h3>
-                <p className="text-sm md:text-base font-sans mb-3 md:mb-4">
+                <p className="text-lg md:text-xl font-sans mb-3 md:mb-4">
                   Minimum entry grade C- and above in KCSE
                 </p>
                 <Accordion type="single" collapsible className="w-full">
@@ -136,10 +136,20 @@ const Hero = () => {
                         <li>N+ Certification</li>
                         <li>CISCO (CCNA) Certification</li>
                         <li>Cyber Security</li>
-                        <li>Hairdressing & Beauty</li>
+                        <li><span className="font-bold text-yellow-400">Hairdressing & Beauty</span></li>
                       </ul>
                       <p className="font-semibold mt-3 mb-1 text-sm">KASNEB (ATD & CPA) New Syllabus</p>
-                      <p className="font-semibold mt-3 mb-1 text-sm">Accounting Packages & Languages</p>
+                      <p className="font-semibold mt-3 mb-1 text-sm">Accounting Packages</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger className="text-white">Language Courses</AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="straight-line-list list-disc list-inside space-y-1 text-sm">
+                        <li>English</li>
+                        <li>French</li>
+                        <li>German</li>
+                      </ul>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -148,7 +158,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Modal */}
         {isModalOpen && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75 p-4">
             <div className="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-md md:max-w-2xl text-center">
@@ -161,27 +170,12 @@ const Hero = () => {
               <p className="text-xl md:text-3xl font-semibold text-green-600 mb-4 md:mb-6 font-sans">
                 From <span className="text-red-500">Ksh 50,000</span> — a small investment for big rewards!
               </p>
-              <p className="text-sm md:text-lg text-gray-600 mb-6 md:mb-8 font-sans leading-relaxed">
-                Boost your business efficiency now!
-              </p>
-
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button
-                  onClick={closeModal}
-                  className="bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-700 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
-                >
-                  Close
-                </button>
-                <a
-                  href="https://wa.me/254720067010"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-green-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-green-600 transition duration-300 text-base md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto"
-                >
-                  <FaWhatsapp className="mr-2 text-xl md:text-2xl" />
-                  Contact Us
-                </a>
-              </div>
+              <button
+                onClick={closeModal}
+                className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300 text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Close
+              </button>
             </div>
           </div>
         )}

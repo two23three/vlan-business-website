@@ -10,10 +10,11 @@ import cctv from './img/cctc.png';
 import pos from './img/pointofsale.jpeg';
 import dashboard from './img/dasboard.jpg';
 import SMS from './img/SMS.webp';
-import itlab from "./img/itlab.jpeg"
-import bizz from "./img/business.jpeg"
-import grad from "./img/graduation.jpeg"
-import printing from "./img/printing.jpg"
+import itlab from "./img/itlab.jpeg";
+import bizz from "./img/business.jpeg";
+import grad from "./img/graduation.jpeg";
+import printing from "./img/printing.jpg";
+
 const services = [
   {
     icon: ShieldCheck,
@@ -69,12 +70,7 @@ const services = [
     images: [
       { src: repair, alt: 'Computer repair technician', description: 'Our skilled technician diagnosing and repairing a laptop.' },
       { src: laptop, alt: 'Computer sales ', description: 'We have the latest computer models and accessories.' },
-      {
-        src: printing, 
-        alt: 'Printing services process', 
-        description: 'High-quality printing services using advanced printing equipment.'
-      }
-      
+      { src: printing, alt: 'Printing services process', description: 'High-quality printing services using advanced printing equipment.' }
     ]
   },
   {
