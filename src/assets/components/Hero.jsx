@@ -59,7 +59,7 @@ const Hero = () => {
             Vlan Business Technologies
           </h1>
           <p className="text-lg md:text-3xl text-gray-200 mb-6 md:mb-8 font-sans leading-relaxed animate-fade-in-up animation-delay-400">
-            Your one-stop solution for IT solutions and security systems
+            Your one-stop IT solutions provider and security systems
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8 md:mb-12 animate-fade-in-up animation-delay-600">
