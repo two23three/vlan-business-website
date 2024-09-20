@@ -40,8 +40,10 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12 rounded-full shadow-md" />
-          <div className="text-white font-bold text-xl tracking-wide">Vlan Business Technologies</div>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12 rounded-full shadow-md" />
+            <div className="text-white font-bold text-xl tracking-wide">Vlan Business Technologies</div>
+          </Link>
         </motion.div>
 
         {/* Desktop Links */}
