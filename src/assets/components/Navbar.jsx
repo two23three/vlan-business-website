@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from "./img/Screenshot_from_2024-09-15_17-59-32-removebg-preview.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,81 +26,86 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
     { name: 'Locations', path: '/locations' },
-    { name: 'Contacts', path: '/contact' }  // Changed from 'Contacts' to 'Contact'
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
     <nav className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo and Title Container */}
-        <motion.div 
-          className="flex items-center space-x-4"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link to="/" className="flex flex-col items-start">
-            {/* <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12 rounded-full shadow-md" /> */}
-            <div className="text-white font-bold text-xl tracking-wide">Vlan Business Technologies LTD</div>
-            <div className="text-white text-sm tracking-wide">Your one-stop IT solutions provider</div>  
-          </Link>
-        </motion.div>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <motion.div key={item.name} variants={linkVariants} whileHover="hover">
-              <Link 
-                to={item.path}
-                className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <motion.button 
-            onClick={toggleMenu} 
-            className="text-white p-2 rounded-md hover:bg-red-700 transition-colors duration-200"
-            whileTap={{ scale: 0.95 }}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
-        </div>
-      </div>
-
-      {/* Mobile Menu Links */}
-      <AnimatePresence>
-        {isOpen && (
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* Logo and Title Container */}
           <motion.div 
-            className="md:hidden bg-red-800 p-4 space-y-4 rounded-b-lg shadow-lg"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={mobileMenuVariants}
-            transition={{ duration: 0.3 }}
+            className="flex items-center space-x-4 mb-4 md:mb-0"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            {navItems.map((item, index) => (
-              <motion.div 
-                key={item.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
+            <Link to="/" className="flex flex-col items-center md:items-start">
+              <div className="text-white font-bold text-lg md:text-xl text-center md:text-left tracking-wide">
+                Vlan Business Technologies LTD
+              </div>
+              <div className="text-white text-xs md:text-sm text-center md:text-left tracking-wide mt-1">
+                Your one-stop IT solutions provider
+              </div>  
+            </Link>
+          </motion.div>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-6">
+            {navItems.map((item) => (
+              <motion.div key={item.name} variants={linkVariants} whileHover="hover">
                 <Link 
                   to={item.path}
-                  className="block text-white hover:text-blue-300 transition-colors duration-200 font-medium py-2"
+                  className="text-white hover:text-blue-300 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <motion.button 
+              onClick={toggleMenu} 
+              className="text-white p-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
+              whileTap={{ scale: 0.95 }}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Links */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              className="md:hidden bg-blue-800 p-4 space-y-4 rounded-b-lg shadow-lg mt-4"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={mobileMenuVariants}
+              transition={{ duration: 0.3 }}
+            >
+              {navItems.map((item, index) => (
+                <motion.div 
+                  key={item.name}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={item.path}
+                    className="block text-white hover:text-blue-300 transition-colors duration-200 font-medium py-2"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 };
