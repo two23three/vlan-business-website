@@ -30,12 +30,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-900 to-blue-700 p-2 shadow-lg">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and Title Container */}
           <motion.div 
-            className="flex items-center space-x-4 mb-4 md:mb-0"
+            className="flex items-center space-x-2 mb-2 md:mb-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -51,7 +51,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
               <motion.div key={item.name} variants={linkVariants} whileHover="hover">
                 <Link 
@@ -71,7 +71,7 @@ const Navbar = () => {
               className="text-white p-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
               whileTap={{ scale: 0.95 }}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div 
-              className="md:hidden bg-blue-800 p-4 space-y-4 rounded-b-lg shadow-lg mt-4"
+              className="md:hidden bg-blue-800 p-2 space-y-2 rounded-b-lg shadow-lg mt-2"
               initial="closed"
               animate="open"
               exit="closed"
@@ -96,7 +96,7 @@ const Navbar = () => {
                 >
                   <Link 
                     to={item.path}
-                    className="block text-white hover:text-blue-300 transition-colors duration-200 font-medium py-2"
+                    className="block text-white hover:text-blue-300 transition-colors duration-200 font-medium py-1"
                   >
                     {item.name}
                   </Link>
