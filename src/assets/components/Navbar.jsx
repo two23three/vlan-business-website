@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-red-600 to-red-700 p-4 shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-900 to-blue-700 p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and Title Container */}
         <motion.div 
@@ -40,9 +40,10 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12 rounded-full shadow-md" />
+          <Link to="/" className="flex flex-col items-start">
+            {/* <img src={logo} alt="VLAN Business Technologies" className="w-12 h-12 rounded-full shadow-md" /> */}
             <div className="text-white font-bold text-xl tracking-wide">Vlan Business Technologies LTD</div>
+            <div className="text-white text-sm tracking-wide">Your one-stop IT solutions provider</div>  
           </Link>
         </motion.div>
 
