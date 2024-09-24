@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from './img/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,23 +33,28 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-to-r from-blue-900 to-blue-700 p-2 shadow-lg">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and Title Container */}
-          <motion.div 
-            className="flex items-center space-x-2 mb-2 md:mb-0"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Link to="/" className="flex flex-col items-center md:items-start">
-              <div className="text-white font-bold text-lg md:text-xl text-center md:text-left tracking-wide">
-                Vlan Business Technologies LTD
-              </div>
-              <div className="text-white text-xs md:text-sm text-center md:text-left tracking-wide mt-1">
-                Your one-stop IT solutions provider
-              </div>  
-            </Link>
-          </motion.div>
+        <div className="flex justify-between items-center">
+          {/* Logo and Mobile Menu Button Container */}
+          <div className="flex items-center space-x-2">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Link to="/" className="flex items-center space-x-2">
+                <img src={logo} alt="Logo" className="w-100 h-10" />
+                <div className="md:hidden">
+                  <motion.button 
+                    onClick={toggleMenu} 
+                    className="text-white p-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {isOpen ? <X size={20} /> : <Menu size={20} />}
+                  </motion.button>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-4">
@@ -62,17 +68,6 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <motion.button 
-              onClick={toggleMenu} 
-              className="text-white p-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
-              whileTap={{ scale: 0.95 }}
-            >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </motion.button>
           </div>
         </div>
 
