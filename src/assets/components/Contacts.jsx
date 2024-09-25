@@ -40,7 +40,7 @@ const Contact = () => {
           >
             <FaWhatsapp className="text-green-600 mr-3 text-xl group-hover:scale-110 transition-transform" />
             <a
-              href="https://wa.me/0720067010"
+              href="https://wa.me/+254720067010"
               className="text-green-600 hover:text-green-800 font-medium text-lg transition-colors duration-300"
             >
               WhatsApp Us

@@ -71,7 +71,7 @@ const Services = () => {
         </div>
         <div className="mt-16">
           <a
-            href="https://wa.me/+254701584681"
+            href="https://wa.me/+254720067010"
             className="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300 ease-in-out text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             target="_blank"
             rel="noopener noreferrer"
