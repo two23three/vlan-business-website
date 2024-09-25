@@ -17,7 +17,7 @@ const slideData = [
   },
   {
     image: customerservice,
-    title: "Vlan College of Business & Technology",
+    title: "Vlan College of Business & Technology"(TVET),
     description: "Empowering the next generation of tech professionals"
   }
 ];
