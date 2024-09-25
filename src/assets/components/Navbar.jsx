@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from './img/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +41,7 @@ const Navbar = () => {
               transition={{ duration: 0.5 }}
             >
               <Link to="/" className="flex items-center space-x-2">
-                <img src={logo} alt="Logo" className="w-100 h-10" />
+              <div className="text-white font-bold text-xl">Vlan Business Technologies</div>
                 <div className="md:hidden">
                   <motion.button 
                     onClick={toggleMenu} 

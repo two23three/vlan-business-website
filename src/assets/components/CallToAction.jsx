@@ -36,9 +36,10 @@ const CallToAction = () => {
             <p className="text-sm md:text-xl text-gray-700 mb-4 md:mb-8 font-sans leading-relaxed">
               Our feature-packed POS system is perfect for retail and restaurants. It offers seamless integration with your business, ensuring you provide top-tier customer service with ease.
             </p>
-            <p className="text-lg md:text-3xl font-semibold text-green-600 mb-3 md:mb-6 font-sans leading-relaxed">
-              For only Ksh. 50,000
+            <p className="text-lg md:text-3xl font-semibold text-[#800000] mb-3 md:mb-6 font-sans leading-relaxed">
+              From only Ksh. 50,000
             </p>
+
             <button
               onClick={closeModal}
               className="mt-4 md:mt-6 bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-blue-700 transition duration-300 text-sm md:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"

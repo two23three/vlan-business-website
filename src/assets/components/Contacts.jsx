@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -36,7 +36,7 @@ const Contact = () => {
           </motion.div>
           <motion.div 
             whileHover={{ x: 5 }}
-            className="flex items-center group"
+            className="flex items-center mb-4 group"
           >
             <FaWhatsapp className="text-green-600 mr-3 text-xl group-hover:scale-110 transition-transform" />
             <a
@@ -45,6 +45,24 @@ const Contact = () => {
             >
               WhatsApp Us
             </a>
+          </motion.div>
+          <motion.div 
+            whileHover={{ x: 5 }}
+            className="flex items-center mb-4 group"
+          >
+            <FaMapMarkerAlt className="text-red-600 mr-3 text-xl group-hover:scale-110 transition-transform" />
+            <span className="text-gray-700 font-medium text-lg">
+              P.O. BOX 79473-00200, Nairobi
+            </span>
+          </motion.div>
+          <motion.div 
+            whileHover={{ x: 5 }}
+            className="flex items-center group"
+          >
+            <FaPhone className="text-purple-600 mr-3 text-xl group-hover:scale-110 transition-transform" />
+            <span className="text-gray-700 font-medium text-lg">
+              Tel: 0720-067010, 0736-328241
+            </span>
           </motion.div>
         </motion.div>
       </motion.div>
