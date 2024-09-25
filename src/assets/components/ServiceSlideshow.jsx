@@ -49,7 +49,7 @@ const servicesData = [
   },
   {
     title: "POS Systems",
-    description: "Efficient point of sale systems for retail. Our POS solutions combine hardware and software to streamline transactions, inventory management, and customer data collection for a seamless retail experience.",
+    description: "Efficient point of sale systems for Hotel, Restaurants, Clubs and Retail. Our POS solutions combine hardware and software to streamline transactions, inventory management, and customer data collection for a seamless retail experience.",
     images: [
       { 
         src: retailpos, 
